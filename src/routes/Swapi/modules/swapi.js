@@ -1,4 +1,4 @@
-const fetchApi = require('../../../common/fetch-api').fetchApi
+const fetchApi = require('../../../lib/fetch-api').fetchApi
 // ------------------------------------
 // Constants
 // ------------------------------------
