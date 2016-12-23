@@ -117,12 +117,12 @@ const initialState = () => ({
   spaceships: [],
   nav: {
     people: {
-      next: API_PEOPLE,
-      previous: null,
+      next: null,
+      prev: null,
     },
     spaceships: {
-      next: API_SPACESHIPS,
-      previous: null,
+      next: null,
+      prev: null,
     },
   }
 })
