@@ -12,9 +12,15 @@ import Swapi from '../components/Swapi'
     Keys will be passed as props to presentational components. Here we are
     implementing our wrapper around increment; the component doesn't care   */
 
-const mapDispatchToProps = {
-  onListPeople: listPeople,
-  onListSpaceships: listSpaceships,
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onListPeople: () => dispatch(listPeople()),
+    onPeopleNext: () => dispatch(listPeople('next')),
+    onPeoplePrev: () => dispatch(listPeople('prev')),
+    onListSpaceships: () => dispatch(listSpaceships()),
+    onListSpaceshipsNext: () => dispatch(listSpaceships('next')),
+    onListSpaceshipsPrev: () => dispatch(listSpaceships('prev')),
+  }
 }
 
 const mapStateToProps = (state) => ({
