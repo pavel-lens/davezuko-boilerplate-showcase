@@ -6,7 +6,7 @@ export const Swapi = (props) => {
 
   return (
   <div>
-    <div style={{ margin: '0 auto' }} >
+    <div style={{ margin: '0 auto' }}>
       <h2>Swapi: {props.counter}</h2>
       <button className='btn btn-default' onClick={props.onListPeople}>
         List people
@@ -16,11 +16,33 @@ export const Swapi = (props) => {
         List spaceships
       </button>
     </div>
-    <div>
-      <ul>
-        {renderPeople(props.people)}
-        {renderSpaceships(props.spaceships)}
-      </ul>
+    <div className='row' style={{ margin: '0 auto', textAlign: 'left' }}>
+      <div className='col-md-6'>
+        <h3>People</h3>
+        <ul>
+          {renderPeople(props.people)}
+          { (props.people.length !== 0) &&
+            <a onClick={props.onPeoplePrev}>Prev</a>
+          }
+          {' · '}
+          { (props.people.length !== 0) &&
+            <a onClick={props.onPeopleNext}>Next</a>
+          }
+        </ul>
+      </div>
+      <div className='col-md-6'>
+        <h3>Spaceships</h3>
+        <ul>
+          {renderSpaceships(props.spaceships)}
+          { (props.spaceships.length !== 0) &&
+            <a onClick={props.onListSpaceshipsPrev}>Prev</a>
+          }
+          {' · '}
+          { (props.spaceships.length !== 0) &&
+            <a onClick={props.onListSpaceshipsNext}>Next</a>
+          }
+        </ul>
+      </div>
     </div>
   </div>
   )
