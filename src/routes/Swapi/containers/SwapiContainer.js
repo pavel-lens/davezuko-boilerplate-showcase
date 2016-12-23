@@ -26,6 +26,7 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state) => ({
   people: state.swapi.people,
   spaceships: state.swapi.spaceships,
+  nav: state.swapi.nav,
 })
 
 /*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:
